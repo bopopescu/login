@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>display salary</title>
+</head>
+<body>
+<form action="/editsalary",method="get">
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>Employee Id</th>
+        <th>Salary</th>
+
+        <th>Action</th>
+    </tr>
+    {% for record1 in tup %}
+    <tr>
+        <td>{{ record1[0] }}</td>
+        <td>{{ record1[2] }}</td>
+        <td>{{ record1[1] }}</td>
+
+        <td><a href="/deletesalary?id={{ record1[0]}}" onclick="myFunction()">delete</a>
+            <a href="/editsalary?id={{ record1[0]}}">edit</a></td>
+    </tr>
+    {% endfor %}
+</table>
+</form>
+
+<script>
+function myFunction() {
+
+  var r = confirm("Are you sure you want to delete?");
+
+}
+</script>
+
+</body>
+</html>

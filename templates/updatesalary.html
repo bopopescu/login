@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>update salary</title>
+</head>
+<body>
+<form action="/updatesalary" method="post">
+    <table>
+        {% for record1 in tup %}
+    <tr>
+        <td>
+            <label>Id</label>
+            <input type="hidden" name="id" value="{{ record1[0] }}">
+        </td>
+    </tr>
+     <tr>
+        <td>
+            <label>Emp Id</label>
+            <input type="hidden" name="Id" value="{{ record1[1] }}">
+        </td>
+    </tr>
+    <tr>
+        <td><label>Salary</label></td>
+        <td><input type="text" name="salary" value="{{ record1[2] }}" ></td>
+    </tr>
+    <tr>
+        <td><input type="submit" name="submit" value="update"></td>
+    </tr>
+        {% endfor %}
+    </table>
+</form>
+</body>
+</html>

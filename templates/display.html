@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>display</title>
+</head>
+<body>
+<form action="/edit",method="get">
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>Employee Name</th>
+        <th>Department</th>
+
+        <th>Action</th>
+    </tr>
+    {% for record in tupl %}
+    <tr>
+        <td>{{ record[0] }}</td>
+        <td>{{ record[1] }}</td>
+        <td>{{ record[2] }}</td>
+
+        <td><a href="/delete?Id={{ record[0] }}" onclick=" myFunction()">delete</a>
+            <a href="/edit?Id={{ record[0] }}">edit</a></td>
+    </tr>
+    {% endfor %}
+</table>
+</form>
+
+
+<script>
+function myFunction() {
+
+  var r = confirm("Are you sure you want to delete?");
+
+}
+</script>
+
+</body>
+</html>
